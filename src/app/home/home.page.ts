@@ -6,7 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
+  resultado = '';
+  valor2: string;
+  valor1: string;
   constructor() {}
-
+  Sumar() {
+    if (!!this.valor1 && !!this.valor2) {
+      const c = parseFloat(this.valor1) + parseFloat(this.valor2);
+      this.resultado = this.valor1 + '+' + this.valor2 + '=' + c;
+    } else {
+      this.resultado = 'Error en los datos!!!';
+    }
+  }
 }
